@@ -1,25 +1,20 @@
   
-<?php  
-session_start();  
-require 'config.php';  
+<?php
+session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['credential'])) {  
-    $credential = $_POST['credential'];  
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['credential'])) {
+    $credential = $_POST['credential'];
 
-    // Verificar JWT (simplificado, en producción usa biblioteca)  
-    $payload = json_decode(base64_decode(str_replace('_', '/', str_replace('-', '+', explode('.', $credential)[1]))), true);  
+    // Verificar JWT (simplificado, en producción usa biblioteca)
+    $payload = json_decode(base64_decode(str_replace('_', '/', str_replace('-', '+', explode('.', $credential)[1]))), true);
 
-    if ($payload && isset($payload['email'])) {  
-        // Guardar en DB  
-        $stmt = $pdo->prepare("INSERT INTO users (email, name, picture) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE name = ?, picture = ?");  
-        $stmt->execute([$payload['email'], $payload['name'], $payload['picture'], $payload['name'], $payload['picture']]);  
-
-        $_SESSION['user'] = $payload;  
-        header('Location: menu.php');  
-        exit;  
-    }  
-}  
-?>  
+    if ($payload && isset($payload['email'])) {
+        $_SESSION['user'] = $payload;
+        header('Location: menu.php');
+        exit;
+    }
+}
+?>
 
 <!DOCTYPE html>  
 <html lang="es">  
