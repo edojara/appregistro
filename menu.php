@@ -61,6 +61,10 @@ $user = $_SESSION['user'];
 </head>  
 <body>  
     <div class="header">
+        <nav class="nav">
+            <a href="menu.php">Inicio</a>
+            <a href="usuarios.php">Usuarios</a>
+        </nav>
         <div class="user-info">
             <img class="user-icon" src="<?php echo htmlspecialchars($user['picture']); ?>" alt="Icono">
             <span><?php echo htmlspecialchars($user['email']); ?></span>
@@ -69,10 +73,6 @@ $user = $_SESSION['user'];
             </form>
         </div>
     </div>
-    <nav class="nav">
-        <a href="menu.php">Inicio</a>
-        <a href="usuarios.php">Usuarios</a>
-    </nav>
     <div class="content">
         <h1>Menú Principal</h1>
         <p>Bienvenido, <?php echo htmlspecialchars($user['name']); ?>.</p>
