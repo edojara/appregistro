@@ -51,18 +51,22 @@ $user = $_SESSION['user'];
     </style>  
 </head>  
 <body>  
-    <div class="header">  
-        <div class="user-info">  
-            <img class="user-icon" src="<?php echo htmlspecialchars($user['picture']); ?>" alt="Icono">  
-            <span><?php echo htmlspecialchars($user['email']); ?></span>  
-            <form method="POST" action="logout.php" style="display: inline;">  
-                <button class="logout-btn" type="submit">Cerrar Sesión</button>  
-            </form>  
-        </div>  
-    </div>  
-    <div class="content">  
-        <h1>Menú Principal</h1>  
-        <p>Bienvenido, <?php echo htmlspecialchars($user['name']); ?>.</p>  
-    </div>  
+    <div class="header">
+        <div class="user-info">
+            <img class="user-icon" src="<?php echo htmlspecialchars($user['picture']); ?>" alt="Icono">
+            <span><?php echo htmlspecialchars($user['email']); ?></span>
+            <form method="POST" action="logout.php" style="display: inline;">
+                <button class="logout-btn" type="submit">Cerrar Sesión</button>
+            </form>
+        </div>
+    </div>
+    <nav class="nav">
+        <a href="menu.php">Inicio</a>
+        <a href="usuarios.php">Usuarios</a>
+    </nav>
+    <div class="content">
+        <h1>Menú Principal</h1>
+        <p>Bienvenido, <?php echo htmlspecialchars($user['name']); ?>.</p>
+    </div>
 </body>  
 </html>  
