@@ -7,11 +7,21 @@
     <title>Hola Mundo</title>  
 </head>  
 <body>
-    <h1>Hola Mundo</h1>
-    <?php
-    exec('python test.py', $output, $return_var);
-    echo "<p>Output: " . implode("\n", $output) . "</p>";
-    echo "<p>Return code: " . $return_var . "</p>";
-    ?>
+    <h1>Registro de Eventos</h1>
+    <div id="g_id_onload"
+         data-client_id="407435070764-uc0aruvvu71fivuq5o7lnocklik857oc.apps.googleusercontent.com"
+         data-callback="handleCredentialResponse">
+    </div>
+    <div class="g_id_signin" data-type="standard"></div>
+    <form id="loginForm" method="POST" style="display: none;">
+        <input type="hidden" name="credential" id="credential">
+    </form>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+        function handleCredentialResponse(response) {
+            document.getElementById('credential').value = response.credential;
+            document.getElementById('loginForm').submit();
+        }
+    </script>
 </body>
 </html>  
