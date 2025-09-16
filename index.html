@@ -29,11 +29,12 @@
         <div class="g_id_signin" data-type="standard"></div>  
     </div>  
     <script src="https://accounts.google.com/gsi/client" async defer></script>  
-    <script>  
-        function handleCredentialResponse(response) {  
-            console.log("ID: " + response.credential);  
-            // Aquí puedes procesar el token, por ejemplo, enviarlo a tu servidor  
-        }  
-    </script>  
+    <script>
+        function handleCredentialResponse(response) {
+            console.log("ID: " + response.credential);
+            localStorage.setItem('google_credential', response.credential);
+            window.location.href = 'menu.html';
+        }
+    </script>
 </body>  
 </html>  
