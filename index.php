@@ -6,7 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Hola Mundo</title>  
 </head>  
-<body>  
-    <h1>Hola Mundo</h1>  
-</body>  
+<body>
+    <h1>Hola Mundo</h1>
+    <?php
+    exec('python test.py', $output, $return_var);
+    echo "<p>Output: " . implode("\n", $output) . "</p>";
+    echo "<p>Return code: " . $return_var . "</p>";
+    ?>
+</body>
 </html>  
