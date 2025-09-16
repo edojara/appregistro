@@ -5,82 +5,8 @@
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Menú</title>  
-    <style>  
-        body {  
-            font-family: Arial, sans-serif;  
-            margin: 0;  
-            padding: 0;  
-        }  
-        .header {  
-            display: flex;  
-            justify-content: flex-end;  
-            align-items: center;  
-            padding: 10px;  
-            background-color: #f0f0f0;  
-        }  
-        .user-info {  
-            display: flex;  
-            align-items: center;  
-        }  
-        .user-icon {  
-            width: 40px;  
-            height: 40px;  
-            border-radius: 50%;  
-            margin-right: 10px;  
-        }  
-        .logout-btn {  
-            margin-left: 10px;  
-            padding: 5px 10px;  
-            background-color: #dc3545;  
-            color: white;  
-            border: none;  
-            cursor: pointer;  
-        }  
-        .content {  
-            padding: 20px;  
-        }  
-    </style>  
 </head>  
 <body>  
-    <div class="header">  
-        <div class="user-info">  
-            <img id="user-icon" class="user-icon" src="" alt="Icono">  
-            <span id="user-email"></span>  
-            <button class="logout-btn" onclick="logout()">Cerrar Sesión</button>  
-        </div>  
-    </div>  
-    <div class="content">  
-        <h1>Menú Principal</h1>  
-        <p>Bienvenido al menú.</p>  
-    </div>  
-    <script src="https://accounts.google.com/gsi/client" async defer></script>  
-    <script>  
-        // Decodificar JWT  
-        function parseJwt(token) {  
-            const base64Url = token.split('.')[1];  
-            const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');  
-            const jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {  
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);  
-            }).join(''));  
-            return JSON.parse(jsonPayload);  
-        }  
-
-        // Cargar info del usuario  
-        window.onload = function() {  
-            const credential = localStorage.getItem('google_credential');  
-            if (credential) {  
-                const payload = parseJwt(credential);  
-                document.getElementById('user-icon').src = payload.picture;  
-                document.getElementById('user-email').textContent = payload.email;  
-            } else {  
-                window.location.href = 'index.html';  
-            }  
-        };  
-
-        function logout() {  
-            localStorage.removeItem('google_credential');  
-            window.location.href = 'index.html';  
-        }  
-    </script>  
+    <h1>Menú</h1>  
 </body>  
 </html>  
