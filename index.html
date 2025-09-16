@@ -4,10 +4,36 @@
 <head>  
     <meta charset="UTF-8">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Página de Prueba</title>  
+    <title>Inicio de Sesión</title>  
+    <style>  
+        body {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+            height: 100vh;  
+            margin: 0;  
+            background-color: #f0f0f0;  
+        }  
+        .container {  
+            text-align: center;  
+        }  
+    </style>  
 </head>  
 <body>  
-    <h1>Hola, mundo!</h1>  
-    <p>Esta es una página de prueba para sincronizar con Git y GitHub.</p>  
+    <div class="container">  
+        <h1>Bienvenido</h1>  
+        <div id="g_id_onload"  
+             data-client_id="407435070764-uc0aruvvu71fivuq5o7lnocklik857oc.apps.googleusercontent.com"  
+             data-callback="handleCredentialResponse">  
+        </div>  
+        <div class="g_id_signin" data-type="standard"></div>  
+    </div>  
+    <script src="https://accounts.google.com/gsi/client" async defer></script>  
+    <script>  
+        function handleCredentialResponse(response) {  
+            console.log("ID: " + response.credential);  
+            // Aquí puedes procesar el token, por ejemplo, enviarlo a tu servidor  
+        }  
+    </script>  
 </body>  
 </html>  
