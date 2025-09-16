@@ -45,9 +45,18 @@ $user = $_SESSION['user'];
             border: none;  
             cursor: pointer;  
         }  
-        .content {  
-            padding: 20px;  
-        }  
+        .nav {
+            background-color: #e9ecef;
+            padding: 10px;
+        }
+        .nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .content {
+            padding: 20px;
+        }
     </style>  
 </head>  
 <body>  
