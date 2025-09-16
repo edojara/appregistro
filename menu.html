@@ -1,12 +1,46 @@
   
-<!DOCTYPE html>  
-<html lang="es">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <title>Menú</title>  
-</head>  
-<body>  
-    <h1>Menú</h1>  
-</body>  
-</html>  
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <style>
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .user-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .logout-btn {
+            margin-left: 10px;
+            padding: 5px 10px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="user-info">
+            <img class="user-icon" src="https://via.placeholder.com/40" alt="Icono">
+            <span>usuario@email.com</span>
+            <button class="logout-btn">Cerrar Sesión</button>
+        </div>
+    </div>
+    <h1>Menú</h1>
+</body>
+</html>
