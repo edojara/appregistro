@@ -8,10 +8,11 @@
     <style>
         .header {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
             padding: 10px;
             background-color: #f0f0f0;
+            flex-wrap: wrap;
         }
         .user-info {
             display: flex;
@@ -40,6 +41,19 @@
         }
         .nav a:hover {
             background-color: #0056b3;
+        }
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .nav {
+                justify-content: center;
+                margin-bottom: 10px;
+            }
+            .user-info {
+                justify-content: center;
+            }
         }
         .logout-btn {
             margin-left: 10px;
