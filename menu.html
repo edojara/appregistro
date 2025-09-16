@@ -23,6 +23,15 @@
             border-radius: 50%;
             margin-right: 10px;
         }
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+        .nav a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
         .logout-btn {
             margin-left: 10px;
             padding: 5px 10px;
@@ -35,6 +44,12 @@
 </head>
 <body>
     <div class="header">
+        <nav class="nav">
+            <a href="menu.html">Inicio</a>
+            <a href="#">Eventos</a>
+            <a href="#">Usuarios</a>
+            <a href="#">Configuraciones</a>
+        </nav>
         <div class="user-info">
             <img id="user-icon" class="user-icon" src="" alt="Icono">
             <span id="user-email"></span>
