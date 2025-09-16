@@ -76,6 +76,7 @@ $user = $_SESSION['user'];
     <div class="content">
         <h1>Menú Principal</h1>
         <p>Bienvenido, <?php echo htmlspecialchars($user['name']); ?>.</p>
+        <p>Archivo actualizado en hosting.</p>
     </div>
 </body>  
 </html>  
